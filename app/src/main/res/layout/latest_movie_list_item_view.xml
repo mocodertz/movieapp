@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.jengasoft.movietheater.ProportionalImageView
+        android:id="@+id/movie_cover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/sample_movie_cover" />
+
+    <RelativeLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/play_movie_trailer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_play_circle_filled_black_24dp"
+            android:tint="@color/colorAccent" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/movie_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/movie_cover"
+        android:fontFamily="sans-serif-condensed"
+        android:background="#0D1E2634"
+        android:padding="15dp"
+        android:text="Fast and Furious 8 April in De BIOSCOOP OOK in IMAX"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>

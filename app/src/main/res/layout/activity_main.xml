@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:indefinite_pager_indicator="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:collapseIcon="@drawable/ic_arrow_back_white_24dp"
+            app:logo="@drawable/ic_movie_white_24dp"
+            app:title="Discover"
+            app:titleMarginStart="32dp"
+            app:titleTextColor="@android:color/white" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/layoutRefresher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/latest_movie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+                        android:id="@+id/latest_movie_pager_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="8dp"
+                        indefinite_pager_indicator:dotColor="@android:color/darker_gray"
+                        indefinite_pager_indicator:selectedDotColor="@color/colorAccent" />
+                </RelativeLayout>
+                <!-- View Pager -->
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/best_popular_films_and_series"
+                    android:textColor="@android:color/darker_gray"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/best_movie_film"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <!--Horizontal Scrollview -->
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="AVAILABLE MOVIE THEATER AND CINEMA"
+                    android:textColor="@android:color/darker_gray"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/available_movie_theater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <!-- Map View Nearest Cinema -->
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/movie_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabGravity="fill"
+                    app:tabMaxWidth="0dp"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@android:color/white"
+                    app:tabTextColor="@android:color/darker_gray" />
+
+                <com.jengasoft.movietheater.CustomViewPager
+                    android:id="@+id/movie_categories_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@android:color/white" />
+                <!-- Tab layout Showing Movie Category -->
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</android.support.design.widget.CoordinatorLayout>

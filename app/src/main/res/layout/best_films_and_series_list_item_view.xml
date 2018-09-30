@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.jengasoft.movietheater.ProportionalImageView
+        android:id="@+id/movie_poster"
+        android:layout_width="182dp"
+        android:layout_height="270dp"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sample_movie_poster" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/movie_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/movie_poster"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/white"
+        android:text="Fast and Furious 8"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/movie_title">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/movie_rating_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/white"
+            android:text="820k"
+            android:textStyle="bold" />
+
+        <RatingBar
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:rating="4.5"
+            android:layout_toEndOf="@+id/movie_rating_count" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
